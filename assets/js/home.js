@@ -19,7 +19,7 @@ userIcon.addEventListener('click', function () {
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', function () {
   localStorage.removeItem("user")
-  window.location.href = 'login.html';
+  window.location.href = '../index.html';
 })
 
 // SCRIPT CART
