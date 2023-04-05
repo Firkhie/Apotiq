@@ -279,7 +279,7 @@ img {
 
 .main-header .outer-box .menu-area .btn-box{
   position: relative;
-  display: inline-block;
+
   float: left;
   margin-left: 350px;
   margin-top: 25px;
@@ -367,7 +367,7 @@ img {
 
 .symptoms-section .content-box .inner-box .single-column{
   position: relative;
-  display: inline-block;
+
   float: left;
   width: 50%;
 }
@@ -540,9 +540,7 @@ img {
   color: #a0a1a8;
 }
 
-.main-footer .widget-section .links-widget .widget-content ul li a:hover{
 
-}
 
 .main-footer .widget-section .links-widget .widget-content ul li a:before{
   position: absolute;
@@ -578,9 +576,7 @@ img {
   color: #93959e;
 }
 
-.main-footer .widget-section .contact-widget .info-list li a:hover{
 
-}
 
 .main-footer .widget-section .contact-widget .info-list li:last-child{
   margin-bottom: 0px;
@@ -639,9 +635,7 @@ img {
   color: #93959e;
 }
 
-.main-footer .footer-bottom .copyright p a:hover{
 
-}
 
 .main-footer .footer-bottom .footer-nav li{
   position: relative;
@@ -672,9 +666,7 @@ img {
   color: #93959e;
 }
 
-.main-footer .footer-bottom .footer-nav li a:hover{
 
-}
 
 .main-footer .anim-icon .icon-1{
   left: 90px;
@@ -697,10 +689,7 @@ img {
   height: 98px;
 }
 
-<!-- css cart -->
-body{
-  background-color: #eeeeee;
-}
+/* <!-- css cart --> */
 
 .footer-background{
   background-color: rgb(204, 199, 199);
@@ -773,4 +762,4 @@ body{
   }
 }
 
-<!-- css cart -->
+  /* <!-- css cart --> */
