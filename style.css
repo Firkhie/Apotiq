@@ -192,7 +192,6 @@
 .items-container .items-content {
    display: flex;
    flex-direction: column;
-   border: var(--border);
    width: 1200px;
    padding: 40px;
 }
@@ -203,6 +202,10 @@
    flex: 1;
    border: var(--border);
    height: 50px;
+   border-radius: 7px;
+   box-shadow: 0 0 7px 1px black;
+   padding: 0 5px;
+   margin-bottom: 12px;
 }
 
 .items-content .search-box input {
@@ -213,6 +216,8 @@
 .items-content .search-box button {
    flex: 0.1;
    cursor: pointer;
+   margin: 6px;
+   border-radius: 7px;
 }
 
 .items-content .search-box button:hover {
@@ -233,6 +238,9 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   border-radius: 7px;
+   box-shadow: 0 0 7px 1px black;
+   padding: 0 5px
 }
 
 .filter-content .filter-sort {
@@ -240,6 +248,9 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   border-radius: 7px;
+   box-shadow: 0 0 7px 1px black;
+   padding: 0 5px
 }
 
 .items-content .medicine-content {
@@ -255,6 +266,8 @@
    align-items: center;
    border: var(--border);
    padding: 10px;
+   border-radius: 7px;
+   box-shadow: 0 0 7px 1px black;
 }
 
 .medicine-box .med-image img {
