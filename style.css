@@ -70,6 +70,10 @@
 /* CSS NAVBAR */
 /* ---------- */
 .navbar-container {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 999;
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -99,25 +103,61 @@
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   width: 200px;
+   width: 70px;
 }
 
-.navbar-container .right-box .info-content h2 {
-   font-size: 15px;
-}
-
-.navbar-container .right-box .cart-content {
-   display: flex;
-   align-items: center;
-}
-
-.navbar-container .right-box .cart-content i {
+.navbar-container .right-box .info-icon i {
    font-size: 25px;
    cursor: pointer;
 }
 
-.navbar-container .right-box .cart-content i:hover {
+.navbar-container .right-box .info-icon i:hover {
    color: var(--brown);
+}
+
+.navbar-container .right-box .cart-icon {
+   display: flex;
+   align-items: center;
+}
+
+.navbar-container .right-box .cart-icon i {
+   font-size: 25px;
+   cursor: pointer;
+}
+
+.navbar-container .right-box .cart-icon i:hover {
+   color: var(--brown);
+}
+
+.navbar-container .info-content {
+   position: absolute;
+   right: 20px;
+   top: 100px;
+   background-color: var(--light-peach);
+   border-radius: 5px;
+   padding: 15px 30px;
+   display: none;
+}
+
+.navbar-container .info-content.active {
+   display: block;
+}
+
+.navbar-container .info-content h2 {
+   font-size: 15px;
+}
+
+.navbar-container .info-content button {
+   margin-top: 10px;
+   padding: 5px 10px;
+   background-color: var(--light-brown);
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.navbar-container .info-content button:hover {
+   background-color: var(--brown);
+   color: var(--light-peach);
 }
 
 /* CSS HERO */
@@ -129,6 +169,7 @@
    background-size: cover;
    height: 400px;
    position: relative;
+   margin-top: 80px;
 }
 
 .hero-container .hero-content {
@@ -156,7 +197,7 @@
    padding: 40px;
 }
 
-.items-content .search-bar {
+.items-content .search-box {
    display: flex;
    flex-direction: row;
    flex: 1;
@@ -164,18 +205,41 @@
    height: 50px;
 }
 
-.items-content .search-bar input {
+.items-content .search-box input {
    flex: 0.9;
    padding-left: 20px;
 }
 
-.items-content .search-bar button {
+.items-content .search-box button {
    flex: 0.1;
    cursor: pointer;
 }
 
-.items-content .search-bar button:hover {
+.items-content .search-box button:hover {
    background-color: #b5b0b0;
+}
+
+.filter-content {
+   display: flex;
+   flex-direction: row;
+   margin-top: 15px;
+   width: 270px;
+   height: 37px;
+}
+
+.filter-content .filter-kategori {
+   border: var(--border);
+   margin-right: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.filter-content .filter-sort {
+   border: var(--border);
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .items-content .medicine-content {
@@ -215,4 +279,13 @@
 
 .medicine-box .add-btn:hover {
    background-color: #b5b0b0;
+}
+
+/* CSS FOOTER */
+/* ---------- */
+.footer-container {
+   margin-top: 20px;
+   background-color: var(--brown);
+   height: 200px;
+   width: 100%;
 }

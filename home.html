@@ -17,15 +17,18 @@
          <i class="fa-solid fa-notes-medical"></i>
          <h2>Apotiq</h2>
       </div>
+
       <div class="right-box">
-         <div class="info-content">
-            <!-- <h2>Nama, Alfa</h2>
-            <h2>Saldo, Rp 500.000</h2> -->
+         <div class="info-icon">
+            <i class="fa-solid fa-user"></i>
          </div>
-         <div class="cart-content">
+         <div class="cart-icon">
             <i class="fa-solid fa-cart-shopping"></i>
          </div>
       </div>
+
+      <div class="info-content"></div>
+      <!-- <div class="cart-content"></div> -->
    </div>
    
    <!------- Hero Section ------->
@@ -41,15 +44,38 @@
       <div class="items-content">
 
          <div class="search-content">
-            <div class="search-bar">
-               <input type="text" placeholder="Search here...">
-               <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="search-box">
+               <input type="text" placeholder="Search here..." id="search-bar">
+               <button type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+         </div>
+         <div class="filter-content">
+            <div class="filter-kategori">
+               <select id="kategori">
+                  <option value="">Kategori</option>
+                  <option value="flu">Flu</option>
+                  <option value="perut">Perut</option>
+                  <option value="tenggorokan">Tenggorokan</option>
+                  <option value="demam">Demam</option>
+                  <option value="kepala">Kepala</option>
+                  <option value="vitamin">Vitamin</option>
+               </select>
+            </div>
+            <div class="filter-sort">
+               <select id="sort-by">
+                  <option value="">Sort by</option>
+                  <option value="asc">Ascending</option>
+                  <option value="desc">Descending</option>
+                </select>
             </div>
          </div>
          <div class="medicine-content"></div>
 
       </div>
    </div>
+
+   <!------- Footer Section ------->
+   <div class="footer-container"></div>
 
    <!------- JS Link ------->
    <script src="database.js"></script>
