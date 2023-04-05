@@ -98,6 +98,7 @@
    margin-left: 7px;
 }
 
+
 .navbar-container .right-box {
    display: flex;
    flex-direction: row;
@@ -163,7 +164,7 @@
 /* CSS HERO */
 /* ---------- */
 .hero-container {
-   background-image: url(images/hero-background.jpg);
+   background-image: url(../assets/images/hero-background.jpg);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;

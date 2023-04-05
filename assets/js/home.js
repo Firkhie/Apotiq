@@ -1,7 +1,7 @@
 // SCRIPT INFO
 // ------------
 if (!localStorage.getItem("user")) {
-  window.location.href = "login.html";
+  window.location.href = "../index.html";
 }
 const userNow = JSON.parse(localStorage.getItem('user'));
 const infoContent = document.querySelector('.info-content');
