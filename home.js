@@ -89,7 +89,7 @@ function addMedicine(arr) {
          <p>Kategori: <span>${kategori}</span></p>
          <p>Harga: <span>${harga}</span></p>
       </div>
-      <button class="add-btn">Add to Cart</button>
+      <button class="btn btn-warning">Add to Cart</button>
    </div>`
   }
 }
