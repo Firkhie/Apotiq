@@ -3,6 +3,7 @@
 if (!localStorage.getItem("user")) {
   window.location.href = "../index.html";
 }
+
 const userNow = JSON.parse(localStorage.getItem('user'));
 const infoContent = document.querySelector('.info-content');
 infoContent.innerHTML = `
@@ -19,6 +20,7 @@ userIcon.addEventListener('click', function () {
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', function () {
   localStorage.removeItem("user")
+  localStorage.removeItem("cart")
   window.location.href = '../index.html';
 })
 
@@ -72,25 +74,82 @@ function filterMedicine() {
 filterKategori.addEventListener('change', filterMedicine);
 filterSort.addEventListener('change', filterMedicine);
 
+// SCRIPT ADD CART ITEMS
+// ---------------------
+const buttonAdd = document.querySelector(".add-btn")
+
+function addToCart(el) {
+  const divAtas = el.parentNode
+  const namaObat = el.parentNode.previousElementSibling.firstElementChild.innerHTML;
+  let cart = localStorage.getItem("cart");
+  cart = cart ? JSON.parse(cart) : {};
+  if (!cart[namaObat]) cart[namaObat] = 0;
+  cart[namaObat]++;
+  localStorage.setItem("cart", JSON.stringify(cart))
+  divAtas.innerHTML = `
+    <button class="fa fa-minus-square" onclick="minusCart(this)"></button>
+    <span>${cart[namaObat]}</span>
+    <button class="fa fa-plus-square" onclick="addToCart(this)"/></button>`
+}
+
+function minusCart(el) {
+  const divAtas = el.parentNode
+  const namaObat = el.parentNode.previousElementSibling.firstElementChild.innerHTML;
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  cart[namaObat]--;
+  if (cart[namaObat] === 0) {
+    divAtas.innerHTML = `
+    <button class="add-btn" onclick="addToCart(this)">Add to Cart</button>`
+    delete cart[namaObat];
+  } else {
+    divAtas.innerHTML = `
+    <button class="fa fa-minus-square" onclick="minusCart(this)"></button>
+    <span>${cart[namaObat]}</span>
+    <button class="fa fa-plus-square" onclick="addToCart(this)"/></button>`
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart))
+}
+
+
 // SCRIPT ITEMS
 // ------------
 const medicineContent = document.querySelector('.medicine-content');
 
 function addMedicine(arr) {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  if (!cart) cart = {};
   for (let obat of arr) {
     let { src, nama, kategori, harga } = obat;
-    medicineContent.innerHTML += `
-   <div class="medicine-box">
-      <div class="med-image">
-         <img src="${src}" alt="">
-      </div>
-      <div class="med-info">
-         <h2>${nama}</h2>
-         <p>Kategori: <span>${kategori}</span></p>
-         <p>Harga: <span>${harga}</span></p>
-      </div>
-      <button class="add-btn">Add to Cart</button>
-   </div>`
+    if (!cart[nama]) {
+      medicineContent.innerHTML += `
+     <div class="medicine-box">
+        <div class="med-image">
+           <img src="${src}" alt="">
+        </div>
+        <div class="med-info">
+           <h2>${nama}</h2>
+           <p>Kategori: <span>${kategori}</span></p>
+           <p>Harga: <span>${harga}</span></p>
+        </div>
+        <div class="cart"><button class="add-btn" onclick="addToCart(this)">Add to Cart</button></div>
+     </div>`
+    } else {
+      medicineContent.innerHTML += `
+     <div class="medicine-box">
+        <div class="med-image">
+           <img src="${src}" alt="">
+        </div>
+        <div class="med-info">
+           <h2>${nama}</h2>
+           <p>Kategori: <span>${kategori}</span></p>
+           <p>Harga: <span>${harga}</span></p>
+        </div>
+        <div class="cart"><button class="fa fa-minus-square" onclick="minusCart(this)"></button>
+        <span>${cart[nama]}</span>
+        <button class="fa fa-plus-square" onclick="addToCart(this)"/></button></div>
+     </div>`
+    }
   }
 }
 addMedicine(obatArr)

@@ -341,6 +341,15 @@
   cursor: pointer;
 }
 
+.cart span{
+  margin-right: 13px;
+  font-size: 21px;
+}
+.cart button{
+  margin-right: 13px;
+  font-size: 21px;
+}
+
 .fa-minus-square {
   cursor: pointer;
 }
