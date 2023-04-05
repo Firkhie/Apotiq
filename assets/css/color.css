@@ -1,0 +1,73 @@
+.theme-btn{
+	background: #ff4f5b;
+}
+
+.bg-color-1{
+  background: #fcf8f7;
+}
+
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li:hover > a{
+	color: #fa1d00;
+}
+
+.sec-title h6{
+    background: #fceceb;
+    color: #ff4f5b;
+}
+
+
+.list-item li:before{
+	background: #ff4f5b;
+}
+
+.cta-section .btn-box .btn-2{
+    color: #ff4c4c;
+    border: 2px solid #ff4c4c;
+}
+
+.cta-section .btn-box .btn-2:before {
+    background: #ff4c4c;
+}
+
+.main-footer .widget-section .links-widget .widget-content ul li a:before{
+	background: #ff4f5b;
+}
+
+.main-footer .widget-section .links-widget .widget-content ul li a:hover{
+	color: #ff4f5b;
+}
+
+.main-footer .widget-section .contact-widget .info-list li i{
+	color: #ff4f5b;
+}
+
+.main-footer .widget-section .contact-widget .info-list li a:hover{
+  color: #ff4f5b;
+}
+
+.main-footer .widget-section .contact-widget .social-links li a:hover{
+	background: #ff4f5b;
+	border-color: #ff4f5b;
+}
+
+.main-footer .footer-bottom .copyright p a:hover{
+  color: #ff4f5b;
+}
+
+.main-footer .footer-bottom .footer-nav li a:hover{
+  color: #ff4f5b;
+}
+
+.page-title .content-box .bread-crumb li{
+	color: #ff4f5b;
+}
+
+.page-title .content-box .bread-crumb li a:hover{
+  color: #ff4f5b;
+}
+
+.main-menu .navigation > li > ul > li > a:hover,
+.main-menu .navigation > li > .megamenu li > a:hover{
+	color: #ff4f5b;
+}
