@@ -12,9 +12,9 @@ loginForm.addEventListener('submit', function(event) {
    let check = false;
 
    for (let user of userArr) {
-      let { name, pass } = user;
+      let { name, pass, saldo } = user;
       if (name === username && pass === password) {
-         localStorage.setItem('user', JSON.stringify(user));
+         localStorage.setItem('user', JSON.stringify({name,saldo}));
          window.location.href = 'home.html';
          check = true;
       }
