@@ -1,6 +1,3 @@
-if (!localStorage.getItem("user")) {
-  window.location.href = "../index.html";
-}
 //User Details
 //------------
 const userNow = JSON.parse(localStorage.getItem('user'));

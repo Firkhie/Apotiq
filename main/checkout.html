@@ -33,41 +33,53 @@
       src="https://kit.fontawesome.com/8d10aa5815.js"
       crossorigin="anonymous"
     ></script>
-
+    <script>
+      if (!localStorage.getItem("user")) {
+        alert(`Tidak ada user`);
+        window.location.href = "../index.html";
+      } else if (!JSON.parse(localStorage.getItem("cart"))) {
+        alert(`Tidak ada barang`);
+        window.location.href = "home.html";
+      } else if (
+        Object.keys(JSON.parse(localStorage.getItem("cart"))).length === 0
+      ) {
+        alert(`Barang kosong`);
+        window.location.href = "home.html";
+      }
+    </script>
     <title>Thank You!</title>
   </head>
   <body class="boxed_wrapper">
     <!-- main header -->
     <!------- Navbar Section ------->
-    
-      <div class="navbar-container">
-        <div class="left-box">
-          <img
-            class="logo"
-            src="../../assets/images/logo.png"
-            alt="error"
-            width="100px"
-          />
-          <h2>Apotiq</h2>
-        </div>
-
-        <div class="right-box">
-          <div class="info-icon">
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <div class="cart-icon">
-            <a href="home.html"><i class="fa-solid fa-shop"></i></a>
-          </div>
-        </div>
-
-        <!-- <div class="cart-content"></div> -->
+    <div class="navbar-container">
+      <div class="left-box">
+        <img
+          class="logo"
+          src="../../assets/images/logo.png"
+          alt="error"
+          width="100px"
+        />
+        <h2>Apotiq</h2>
       </div>
+
+      <div class="right-box">
+        <div class="info-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="cart-icon">
+          <a href="home.html"><i class="fa-solid fa-shop"></i></a>
+        </div>
+      </div>
+
+      <!-- <div class="cart-content"></div> -->
+    </div>
     <!-- main-header end -->
 
     <!-- ISI DARI OBAT-OBATAN DI SINI -->
 
     <div
-      style="position:relative;margin-top:70px;margin-bottom: 70px;"
+      style="position: relative; margin-top: 70px; margin-bottom: 70px"
       class="vh-100 d-flex justify-content-center align-items-center"
     >
       <div class="col-md-8">
@@ -100,39 +112,18 @@
               Back Ke Halaman Utama
             </button>
             <br /><br />
-            <table class="table table-striped">
-              <caption>
-                Barang Checkout
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+            <div id="header-list-belanjaan">
+              <div style="border-right: solid;border-color: rgb(194, 188, 188);">Nama Barang</div>
+              <div style="border-color: rgb(194, 188, 188);">Jumlah</div>
+            </div>
+            <div class="checkout-belanjaan">
+              <div style="border-right: solid;border-color: rgb(194, 188, 188);">
+                <span>NAMA OBAT</span>
+              </div>
+              <div style="border-color: rgb(194, 188, 188);">
+                2
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -248,7 +239,7 @@
     <!------- Footer Section ------->
 
     <!------- JS Link ------->
-    <script src="database.js"></script>
-    <script src="home.js"></script>
+    <script src="../assets/js/database.js"></script>
+    <!-- <script src="../assets/js/checkout.js"></script> -->
   </body>
 </html>

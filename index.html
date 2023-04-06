@@ -7,8 +7,13 @@
     <title>Login Page</title>
     <!------- CSS Link ------->
     <link rel="stylesheet" href="style.css" />
+    <script>
+      if (localStorage.getItem("user")) {
+        window.location.href = "/main/home.html";
+      }
+    </script>
   </head>
-  <body style="background-image: url('/assets/images/loginBG.png');">
+  <body style="background-image: url('/assets/images/loginBG.png')">
     <!------- Login Section ------->
     <div class="login-container">
       <h2>Login Page</h2>

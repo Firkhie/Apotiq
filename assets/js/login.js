@@ -5,9 +5,7 @@ import { passwordGenerator } from "./passGen.js";
 // SCRIPT LOGIN
 // ------------
 
-if (localStorage.getItem("user")) {
-  window.location.href = "/main/home.html";
-}
+
 
 const loginForm = document.querySelector('#login-form');
 const usernameInput = document.querySelector('#username');
