@@ -58,6 +58,16 @@ function checkout() {
   // cek harga dan saldo,
   // jika saldo kurang dari harga bayar tampilkan saldo tidak cukup
   // jika cukup ke halaman terimakasih
+  let subtotal = document.querySelector(`#totalBelanjaan`).innerHTML
+  subtotal = subtotal.substring(13, subtotal.length)
+  let user = JSON.parse(localStorage.getItem(`user`))
+  if(user.saldo >= subtotal) {
+    window.location.href = `checkout.html`
+  } else {
+    alert(`Saldo anda kurang ${Math.abs(user.saldo - subtotal)}`)
+  }
+
+
 }
 
 //Button Plus
