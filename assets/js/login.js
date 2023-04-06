@@ -1,6 +1,9 @@
+// IMPORT PASSWORD GEN FUNCTION
+import { passwordGenerator } from "./passGen.js"; 
+
+
 // SCRIPT LOGIN
 // ------------
-import { passwordGenerator } from "./passGen.js";
 
 if (localStorage.getItem("user")) {
   window.location.href = "/main/home.html";
