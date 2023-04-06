@@ -22,6 +22,12 @@
       src="https://kit.fontawesome.com/8d10aa5815.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      if (!localStorage.getItem("user")) {
+        alert(`Tidak ada user, silahkan login`);
+        window.location.href = "../index.html";
+      }
+    </script>
   </head>
   <body>
     <!------- Navbar Section ------->
