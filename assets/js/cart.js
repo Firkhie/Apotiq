@@ -1,6 +1,9 @@
 if (!localStorage.getItem("user")) {
   window.location.href = "../index.html";
 }
+
+
+
 const userNow = JSON.parse(localStorage.getItem('user'));
 const infoContent = document.querySelector('.info-content');
 infoContent.innerHTML = `
@@ -20,6 +23,33 @@ logoutBtn.addEventListener('click', function () {
   window.location.href = '../index.html';
 })
 
+
+const labelJumlahBarang = document.querySelector(`#jumlahBarang`)
+function jumlahBarang() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  let jumlah = Object.keys(cart).length
+  if (jumlah < 2) {
+    labelJumlahBarang.innerHTML = `${jumlah} item`
+  } else {
+    labelJumlahBarang.innerHTML = `${jumlah} items`
+  }
+}
+
+function totalHarga() {
+  const totalBelanjaan = document.querySelector(`#totalBelanjaan`)
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  let hargaTotal = 0;
+  for (const namaObat in cart) {
+    for (const { nama, harga } of obatArr) {
+      const totalHarga = cart[namaObat] * harga;
+      if (namaObat === nama) {
+        hargaTotal += totalHarga;
+      }
+    }
+  }
+  totalBelanjaan.innerHTML = `SUBTOTAL Rp. ${hargaTotal}`;
+}
+
 function addToCart(el) {
   const divAtas = el.parentNode
   const namaObat = el.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
@@ -34,8 +64,10 @@ function addToCart(el) {
     <button class="fa fa-plus-square" onclick="addToCart(this)"/></button>`
   let harga = divAtas.previousElementSibling.innerHTML;
   harga = harga.substring(4, harga.length)
-  let totalHarga = harga * cart[namaObat];
-  divAtas.nextElementSibling.innerHTML = `Rp. ${totalHarga}`
+  let totalHargaBarang = harga * cart[namaObat];
+  divAtas.nextElementSibling.innerHTML = `Rp. ${totalHargaBarang}`
+
+  totalHarga();
 }
 
 function minusCart(el) {
@@ -44,7 +76,7 @@ function minusCart(el) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   cart[namaObat]--;
   if (cart[namaObat] === 0) {
-    divAtas.parentNode.innerHTML = ``
+    divAtas.parentNode.remove()
     delete cart[namaObat];
   } else {
     divAtas.innerHTML = `
@@ -58,22 +90,27 @@ function minusCart(el) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart))
+  jumlahBarang();
+  totalHarga();
 }
 
 function deleteEntry(el) {
   const divAtas = el.parentNode
   const namaObat = el.parentNode.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
   let cart = JSON.parse(localStorage.getItem("cart"));
-  divAtas.innerHTML = ``
+  divAtas.remove()
   delete cart[namaObat];
   localStorage.setItem("cart", JSON.stringify(cart))
+  jumlahBarang();
+  totalHarga();
 }
 
 
-const cartContainer = document.querySelector(".container-barang")
-const cart = JSON.parse(localStorage.getItem('cart'));
 
+
+const cartContainer = document.querySelector(".container-barang")
 function render() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
   for (const namaObat in cart) {
     for (const { src, nama, harga } of obatArr) {
       const totalHarga = cart[namaObat] * harga;
@@ -105,6 +142,9 @@ function render() {
   }
 }
 
+let cart = JSON.parse(localStorage.getItem('cart'));
 if (Object.keys(cart).length !== 0) {
   render()
+  jumlahBarang()
+  totalHarga();
 }
