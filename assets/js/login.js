@@ -1,5 +1,7 @@
 // SCRIPT LOGIN
 // ------------
+import { passwordGenerator } from "./passGen.js";
+
 if (localStorage.getItem("user")) {
   window.location.href = "/main/home.html";
 }
@@ -16,8 +18,9 @@ loginForm.addEventListener('submit', function(event) {
    let check = false;
 
    for (let user of userArr) {
-      let { name, pass, saldo } = user;
-      if (name === username && pass === password) {
+     let { name, pass, saldo } = user;
+     const passEncoded = passwordGenerator(password)
+      if (name === username && passEncoded === pass) {
          localStorage.setItem('user', JSON.stringify({name,saldo}));
          window.location.href = '../../main/home.html';
          check = true;
@@ -27,3 +30,4 @@ loginForm.addEventListener('submit', function(event) {
       alert('Username atau password salah!');
    }
 })
+

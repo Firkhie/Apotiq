@@ -360,3 +360,56 @@
 #totalBelanjaan{
   font-weight: bold;
 }
+
+.btn-box a{
+  float: right;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-box .btn-2{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px 40px;
+  margin-left: 20px;
+  z-index: 1;
+  border: 2px solid #ff4c4c;
+  background-color: #ff4c4c;
+  color : #fff;
+}
+
+.btn-box .btn-2:hover{
+  color: #ff4c4c;
+}
+
+.btn-box .btn-2:before{
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  transition: all 500ms ease;
+  background: #fff
+}
+
+.btn-box{
+  position: relative;
+  margin-top: 0;
+}
+
+.btn-box .btn-2:hover:before{
+  width: 100%;
+  left: 0px;
+}
+
+.btn-box .theme-btn{
+  padding: 15px 40px;
+}

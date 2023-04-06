@@ -1,9 +1,8 @@
 if (!localStorage.getItem("user")) {
   window.location.href = "../index.html";
 }
-
-
-
+//User Details
+//------------
 const userNow = JSON.parse(localStorage.getItem('user'));
 const infoContent = document.querySelector('.info-content');
 infoContent.innerHTML = `
@@ -23,7 +22,8 @@ logoutBtn.addEventListener('click', function () {
   window.location.href = '../index.html';
 })
 
-
+//Menampilkan Jumlah Barang
+//-------------------------
 const labelJumlahBarang = document.querySelector(`#jumlahBarang`)
 function jumlahBarang() {
   const cart = JSON.parse(localStorage.getItem('cart'));
@@ -35,6 +35,8 @@ function jumlahBarang() {
   }
 }
 
+//Menampilkan Total Harga
+//-------------------------
 function totalHarga() {
   const totalBelanjaan = document.querySelector(`#totalBelanjaan`)
   const cart = JSON.parse(localStorage.getItem('cart'));
@@ -50,6 +52,16 @@ function totalHarga() {
   totalBelanjaan.innerHTML = `SUBTOTAL Rp. ${hargaTotal}`;
 }
 
+//Button Checkout
+//-------------------------
+function checkout() {
+  // cek harga dan saldo,
+  // jika saldo kurang dari harga bayar tampilkan saldo tidak cukup
+  // jika cukup ke halaman terimakasih
+}
+
+//Button Plus
+//-------------------------
 function addToCart(el) {
   const divAtas = el.parentNode
   const namaObat = el.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
@@ -70,6 +82,8 @@ function addToCart(el) {
   totalHarga();
 }
 
+//Button Minus
+//-------------------------
 function minusCart(el) {
   const divAtas = el.parentNode
   const namaObat = el.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
@@ -94,6 +108,8 @@ function minusCart(el) {
   totalHarga();
 }
 
+//Button Delete
+//-------------------------
 function deleteEntry(el) {
   const divAtas = el.parentNode
   const namaObat = el.parentNode.firstElementChild.firstElementChild.nextElementSibling.innerHTML;
@@ -105,9 +121,8 @@ function deleteEntry(el) {
   totalHarga();
 }
 
-
-
-
+//Initial Render
+//-------------------------
 const cartContainer = document.querySelector(".container-barang")
 function render() {
   const cart = JSON.parse(localStorage.getItem('cart'));
