@@ -457,7 +457,14 @@
 }
 
 #obat-dibeli {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+#obat-dibeli span{
+  display: flex;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
 #obat-jumlah-dibeli{
