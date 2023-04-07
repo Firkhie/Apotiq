@@ -170,3 +170,13 @@ if (Object.keys(cart).length !== 0) {
   jumlahBarang()
   totalHarga();
 }
+
+// SCRIPT CABANG
+// ------------
+const cabangApotiq = document.querySelectorAll('.cabang');
+cabangApotiq.forEach(cabang => {
+  cabang.addEventListener('click', function (event) {
+    event.preventDefault();
+    alert('Cabang masih belum buka. Silakan cek kembali nanti.');
+  })
+})

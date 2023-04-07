@@ -449,3 +449,14 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
+#obat-dibeli {
+  display: block;
+}
+
+#obat-jumlah-dibeli {
+  display: block;
+  margin-left: 10px;
+  text-align: center;
+  padding-left: 200px;
+}

@@ -21,8 +21,15 @@ logoutBtn.addEventListener('click', function () {
   window.location.href = '../index.html';
 })
 
-// SCRIPT CART
+// SCRIPT CABANG
 // ------------
+const cabangApotiq = document.querySelectorAll('.cabang');
+cabangApotiq.forEach(cabang => {
+  cabang.addEventListener('click', function (event) {
+    event.preventDefault();
+    alert('Cabang masih belum buka. Silakan cek kembali nanti.');
+  })
+})
 
 
 // SCRIPT SEARCH
