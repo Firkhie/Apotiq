@@ -23,7 +23,7 @@ loginForm.addEventListener('submit', function(event) {
      const passEncoded = passwordGenerator(password)
       if (name === username && passEncoded === pass) {
          localStorage.setItem('user', JSON.stringify({name,saldo}));
-         window.location.href = 'main/home.html';
+         window.location.href = './main/home.html';
          check = true;
       }
    }
