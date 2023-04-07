@@ -16,6 +16,7 @@ userIcon.addEventListener('click', function () {
 
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', function () {
+  localStorage.removeItem("cart")
   localStorage.removeItem("user")
   window.location.href = '../index.html';
 })
@@ -78,7 +79,13 @@ function checkout() {
   let subtotal = document.querySelector(`#totalBelanjaan`).innerHTML
   subtotal = subtotal.substring(13, subtotal.length)
   let user = JSON.parse(localStorage.getItem(`user`))
-  if(user.saldo >= subtotal) {
+
+  if (Number(subtotal) === 0) {
+    alert("tidak ada barang yang di checkout, silahkan tambahkan barang");
+    window.location.href = `home.html`
+  }else if(user.saldo >= subtotal) {
+    user.saldo -= subtotal;
+    localStorage.setItem("user", JSON.stringify(user))
     window.location.href = `checkout.html`
   } else {
     alert(`Saldo anda kurang ${Math.abs(user.saldo - subtotal)}`)

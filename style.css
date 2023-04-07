@@ -420,7 +420,6 @@
 .btn-box .theme-btn{
   padding: 15px 40px;
 }
-
 /* Checkout  */
 /* --------- */
 
@@ -458,12 +457,18 @@
 }
 
 #obat-dibeli {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+#obat-dibeli span{
+  display: flex;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
 }
 
-#obat-jumlah-dibeli {
-  display: block;
-  margin-left: 10px;
+#obat-jumlah-dibeli{
+  display: flex;
   text-align: center;
-  padding-left: 200px;
+  flex-direction: column;
 }
