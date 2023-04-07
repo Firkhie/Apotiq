@@ -6,6 +6,7 @@ const infoContent = document.querySelector('.info-content');
 infoContent.innerHTML = `
    <h2>Nama, ${userNow.name}</h2>
    <h2>Saldo, Rp ${userNow.saldo}</h2>
+   <button id="topup-btn" onclick="topup()">TopUp</button>
    <button id="logout-btn">Logout</button>
 `;
 
@@ -21,9 +22,25 @@ logoutBtn.addEventListener('click', function () {
   window.location.href = '../index.html';
 })
 
-// SCRIPT CART
+// SCRIPT TOPUP
 // ------------
-
+function topup() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  let jumlah = Number(prompt("masukan jumlah yang di topup"));
+  if (isNaN(jumlah)) {
+    alert(`input harus angka!`)
+  } else {
+    user.saldo += jumlah;
+    const infoContent = document.querySelector('.info-content');
+    infoContent.innerHTML = `
+   <h2>Nama, ${user.name}</h2>
+   <h2>Saldo, Rp ${user.saldo}</h2>
+   <button id="topup-btn" onclick="topup()">TopUp</button>
+   <button id="logout-btn">Logout</button>
+`;
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+}
 
 // SCRIPT SEARCH
 // -------------

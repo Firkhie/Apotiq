@@ -152,7 +152,14 @@
 .navbar-container .info-content button {
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: var(--light-brown);
+  background-color: rgb(206, 49, 49);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.navbar-container .info-content #topup-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: rgb(120, 175, 129);
   border-radius: 4px;
   cursor: pointer;
 }
