@@ -20,5 +20,10 @@ const obatArr = [
    { src: `${baseURL}Panadol.jpg`, nama: "Panadol", kategori: "Demam", harga: 11000 },
    { src: `${baseURL}Caviplex.jpg`, nama: "Caviplex", kategori: "Vitamin", harga: 25000 },
    { src: `${baseURL}Bodrexin.jpg`, nama: "Bodrex", kategori: "Kepala", harga: 12000 },
-   { src: `${baseURL}Mylanta.jpg`, nama: "Mylanta", kategori: "Perut", harga: 18000 }
+   { src: `${baseURL}Mylanta.jpg`, nama: "Mylanta", kategori: "Perut", harga: 18000 },
+   { src: `${baseURL}actifed.jpg`, nama: "Actifed", kategori: "Tenggorokan", harga: 50000 },
+   { src: `${baseURL}Fluimucil.jpg`, nama: "Fluimucil", kategori: "Tenggorokan", harga: 25000 },
+   { src: `${baseURL}Innolife.jpg`, nama: "Innolife", kategori: "Demam", harga: 29000},
+   { src: `${baseURL}Procold.jpg`, nama: "Procold", kategori: "Flu", harga: 2800},
+   { src: `${baseURL}ODR.jpg`, nama: "ODR", kategori: "Perut", harga: 105000}
 ]
