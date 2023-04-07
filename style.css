@@ -294,6 +294,11 @@
   background-color: var(--light-peach);
 }
 
+.medicine-box .med-info h2 {
+  text-align: center;
+}
+
+
 .medicine-box .add-btn {
   padding: 10px;
   cursor: pointer;
