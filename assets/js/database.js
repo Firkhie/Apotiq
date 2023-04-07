@@ -4,7 +4,7 @@ const userArr = [
    {name: 'user3', pass: '3RFSV', saldo: 50_000},
 ]
 
-const baseURL = "../../assets/images/"
+const baseURL = "../assets/images/"
 const obatArr = [
    { src: `${baseURL}Ponstan.jpg`, nama: "Ponstan", kategori: "Kepala", harga: 15000 },
    { src: `${baseURL}Combantrin.jpg`, nama: "Combantrin", kategori: "Perut", harga: 10000 },
