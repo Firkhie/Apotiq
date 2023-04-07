@@ -420,3 +420,48 @@
 .btn-box .theme-btn{
   padding: 15px 40px;
 }
+/* Checkout  */
+/* --------- */
+
+#header-list-belanjaan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+#header-list-belanjaan div{
+  border-color: rgb(194, 188, 188) ;
+  border-bottom: solid;
+
+}
+.checkout-belanjaan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.checkout-belanjaan div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 10px;
+  border-bottom: solid;
+}
+.checkout-belanjaan div img{
+  margin-right: 20px;
+}
+
+.checkout-belanjaan  div span {
+  margin: 0 10px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#obat-dibeli {
+  display: block;
+}
+
+#obat-jumlah-dibeli{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
