@@ -78,10 +78,15 @@ function checkout() {
   let subtotal = document.querySelector(`#totalBelanjaan`).innerHTML
   subtotal = subtotal.substring(13, subtotal.length)
   let user = JSON.parse(localStorage.getItem(`user`))
-  if(user.saldo >= subtotal) {
+  if (subtotal === 0) {
+    alert("tidak ada barang yang di checkout, silahkan tambahkan barang");
+    window.location.href = `home.html`
+  }else if(user.saldo >= subtotal) {
     window.location.href = `checkout.html`
   } else {
     alert(`Saldo anda kurang ${Math.abs(user.saldo - subtotal)}`)
+    user.saldo -= subtotal;
+    localStorage.setItem("user",JSON.stringify(user))
   }
 
 
