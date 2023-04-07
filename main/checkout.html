@@ -71,7 +71,9 @@
           <a href="home.html"><i class="fa-solid fa-shop"></i></a>
         </div>
       </div>
+
       <div class="info-content"></div>
+
       <!-- <div class="cart-content"></div> -->
     </div>
     <!-- main-header end -->
@@ -80,6 +82,7 @@
 
     <div
       style="position: relative; margin-top: 0px; margin-bottom: 70px"
+
       class="vh-100 d-flex justify-content-center align-items-center"
     >
       <div class="col-md-8">
@@ -108,7 +111,7 @@
               Terimakasih atas pemesanan anda, barang akan segera sampai ke
               tujuan.
             </p>
-            <button class="btn btn-outline-success">
+            <button class="btn btn-outline-success" onClick="window.location.href='home.html'">
               Back Ke Halaman Utama
             </button>
             <br /><br />
@@ -118,10 +121,9 @@
             </div>
             <div class="checkout-belanjaan">
               <div style="border-right: solid;border-color: rgb(194, 188, 188);">
-                <span>NAMA OBAT</span>
+                <span id="obat-dibeli"></span>
               </div>
-              <div style="border-color: rgb(194, 188, 188);">
-                2
+              <div style="border-color: rgb(194, 188, 188);" id="obat-jumlah-dibeli">
               </div>
             </div>
           </div>
@@ -167,12 +169,12 @@
                   </div>
                   <div class="widget-content">
                     <ul class="list clearfix">
-                      <li><a href="index.html">Jakarta</a></li>
-                      <li><a href="index.html">Bandung</a></li>
-                      <li><a href="index.html">Surabaya</a></li>
-                      <li><a href="index.html">Makassar</a></li>
-                      <li><a href="index.html">Medan</a></li>
-                      <li><a href="index.html">Ambon</a></li>
+                      <li class="cabang"><a href="#">Jakarta</a></li>
+                      <li class="cabang"><a href="#">Bandung</a></li>
+                      <li class="cabang"><a href="#">Surabaya</a></li>
+                      <li class="cabang"><a href="#">Makassar</a></li>
+                      <li class="cabang"><a href="#">Medan</a></li>
+                      <li class="cabang"><a href="#">Ambon</a></li>
                     </ul>
                   </div>
                 </div>
@@ -240,6 +242,9 @@
 
     <!------- JS Link ------->
     <script src="../assets/js/database.js"></script>
+
     <script src="../assets/js/checkout.js"></script>
+
+
   </body>
 </html>
